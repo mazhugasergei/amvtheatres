@@ -1,0 +1,56 @@
+footer{
+  background: #171717;
+  .links{
+    display: grid;
+    gap: 2.2rem;
+    @media (min-width: $bp2){ gap: 2.7rem 3.2rem;}
+    @media (min-width: $bp2){ grid-template-columns: repeat(auto-fit, minmax(min(138px), 1fr)); }
+    padding-block: 3.5rem 5.25rem;
+    @media (min-width: $bp2){ padding-block: 4rem 6rem; }
+    @media (min-width: $bp8){ padding-block: 5rem 7.5rem; }
+    ul{
+      h4{
+        font-size: 1.05rem;
+        @media (min-width: $bp2){ font-size: 1.2rem; }
+        @media (min-width: $bp8){ font-size: 1.5rem; }
+        margin-block-end: 1.05rem;
+        @media (min-width: $bp2){ margin-block-end: 1.2rem; }
+        @media (min-width: $bp8){ margin-block-end: 1.5rem; }
+      }
+      a{
+        display: block;
+        font-size: .616rem;
+        @media (min-width: $bp2){ font-size: .704rem; }
+        @media (min-width: $bp8){ font-size: .875rem; }
+        margin-block-end: .154rem;
+        @media (min-width: $bp8){ margin-block-end: .22rem; }
+      }
+    }
+  }
+  .container{
+    border-top: 1px solid #585858;
+    .wrapper{
+      padding-block: 1.15rem 1.53125rem;
+      @media (min-width: $bp2){ padding-block: 1.3rem 1.8rem; }
+      @media (min-width: $bp8){ padding-block: 1.5rem 2.2rem; }
+      .copyright{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block-end: .48rem;
+        span{
+          font-size: .7rem;
+          @media (min-width: $bp2){ font-size: .8rem; }
+          @media (min-width: $bp8){ font-size: .88rem; }
+          margin-inline-end: .7rem;
+        }
+      }
+      .attention{
+        font-size: .49rem;
+        @media (min-width: $bp2){ font-size: .56rem; }
+        @media (min-width: $bp8){ font-size: .7rem; }
+        color: #a3a3a3;
+      }
+    }
+  }
+}

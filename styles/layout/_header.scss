@@ -1,0 +1,133 @@
+header:not(.details){
+  position: sticky;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  background: #000;
+
+  & > .wrapper{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: $bp7){ align-items: stretch; }
+  }
+
+  input[type=checkbox]{ display: none; }
+
+  label{
+    @media (min-width: $bp7){ display: none; }
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 8px;
+    transition: .15s;
+    padding: 9px 10px;
+    margin-inline-start: -9px;
+    div{
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      transition: .15s;
+    }
+  }
+  #menuBtn:checked ~ label{
+    gap: 0;
+    div{
+      &:nth-child(2){ opacity: 0; }
+      &:nth-child(1){ transform: rotate(45deg); }
+      &:nth-child(3){ transform: rotate(-45deg); margin-block-start: -4px; }
+    }
+  }
+
+  .logo{
+    @media (min-width: $bp7){ align-self: center; }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @media (min-width: $bp7){ position: static; }
+    transform: translate(-50%, -50%);
+    @media (min-width: $bp7){ transform: unset; }
+  }
+
+  ul{
+    @media (min-width: $bp7){
+      display: flex;
+      justify-content: center;
+    }
+    visibility: hidden;
+    @media (min-width: $bp7){ visibility: visible; }
+    opacity: 0;
+    @media (min-width: $bp7){ opacity: 1; }
+    position: absolute;
+    top: 100%;
+    left: 0;
+    @media (min-width: $bp7){ position: static; }
+    width: 100%;
+    height: 100vh; ////
+    @media (min-width: $bp7){ height: unset; }
+    transition: .15s;
+    background: #000;
+    li{
+      @media (min-width: $bp7){
+        display: flex;
+        align-items: stretch;
+        transition: .15s;
+        &:last-child{
+          display: none;
+          @media (min-width: 960px){ display: flex; }
+        }
+      }
+      font-size: 1.5625rem;
+      @media (min-width: $bp7){ font-size: 0.875rem; }
+      font-weight: 500;
+      margin-block: 42px;
+      @media (min-width: $bp7){ margin-block: 0; }
+      a{
+        @media (min-width: $bp7){
+          position: relative;
+          transition: .15s;
+          span{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            transition: .15s;
+          }
+          &:hover{
+            color: #00a8e1;
+            span{
+              box-shadow: inset 0 -2px #00a8e1;
+            }
+          }
+        }
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        @media (min-width: $bp7){ padding-inline: 1rem; }
+        svg{
+          @media (min-width: $bp7){ display: none; }
+          width: 20px;
+          height: 20px;
+          margin-inline: 3px;
+        }
+      }
+    }
+  }
+  #menuBtn:checked ~ ul{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  i{
+    cursor: pointer;
+    width: 100%;
+    box-sizing: content-box;
+    max-width: 24px;
+    @media (min-width: $bp7){ max-width: 28px; }
+    padding-inline: 12px;
+    margin-inline-end: -12px;
+  }
+}

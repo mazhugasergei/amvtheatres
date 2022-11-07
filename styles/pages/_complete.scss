@@ -1,0 +1,14 @@
+.complete{
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  h1{
+    text-align: center;
+    line-height: 1.3;
+  }
+  .btn{
+    margin-block-start: 1rem;
+  }
+}

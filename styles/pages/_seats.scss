@@ -1,0 +1,95 @@
+main.seats{
+  .hall{
+    overflow-x: auto;
+    max-width: 1098px;
+    padding-block-end: 20px;
+
+    .screen{
+      align-self: center;
+      width: 1050px;
+      aspect-ratio: 7/1;
+      background: radial-gradient(ellipse at top, #ffffff80, transparent 70%);
+      border: 10px solid #000;
+      border-top-color: #fff;
+      border-radius: 200%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 500;
+      padding-block-start: 15px;
+      margin-block-start: 30px;
+    }
+    .seats{
+      display: grid;
+      grid-template-columns: repeat(16, auto);
+      justify-content: flex-start;
+      gap: 14px;
+      input{ display: none; }
+      label{
+        cursor: pointer;
+        user-select: none;
+        width: 50px;
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+        border: 2px solid #fff;
+        font-size: 12px;
+      }
+      input:checked ~ label{
+        background: $primary !important;
+      }
+    }
+  }
+
+  .types{
+    display: flex;
+    flex-flow: column;
+    gap: .6rem;
+    padding-block: 1rem;
+    ul{
+      display: flex;
+      justify-content: center;
+      gap: .3rem 1rem;
+      flex-wrap: wrap;
+      li{
+        display: flex;
+        gap: .4rem;
+        div{
+          width: 20px;
+          aspect-ratio: 1/1;
+          border: 2px solid #fff;
+          border-radius: 20%;
+        }
+      }
+      &:nth-child(1) li:nth-child(2) div{ border-radius: 50%; }
+      &:nth-child(2){
+        li{
+          &:nth-child(2) div{ background: $primary; }
+          &:nth-child(3) div{ opacity: 0.4; }
+        }
+      }
+    }
+  }
+
+  .continue{
+    border-top: 1px solid #e0e0e059;
+    padding-block: 1rem;
+    .wrapper{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .selectedNum{
+        user-select: none;
+        opacity: 0;
+        text-transform: uppercase;
+        font-size: .875rem;
+        color: #ffffff80;
+        font-weight: 500;
+        transition: .15s;
+      }
+      .btn{
+        margin-inline-start: 1rem;
+        @media (min-width: $bp4){ margin-inline-start: 3.125rem; }
+      }
+    }
+  }
+}

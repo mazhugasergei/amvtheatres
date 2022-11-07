@@ -1,0 +1,36 @@
+.payment{
+  display: grid;
+  place-items: center;
+  form{
+    max-width: 24.6875rem;
+    display: flex;
+    flex-flow: column;
+    input{
+      &:not([type=email]){
+        // pointer-events: none;
+        cursor: not-allowed;
+      }
+      min-width: 100px;
+      color: #fff;
+      background: none;
+      border: 1px solid #e0e0e059;
+      border-radius: 100vmax;
+      padding-block: .65625rem;
+      padding-inline: 1.3125rem;
+      @media (min-width: $bp2){
+        padding-block: .9375rem;
+        padding-inline: 1.875rem;
+      }
+      margin-block: .7rem;
+    }
+    div{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 .6rem;
+    }
+    .btn{
+      align-self: flex-end;
+      margin-block-start: .55rem;
+    }
+  }
+}

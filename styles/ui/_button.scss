@@ -1,0 +1,35 @@
+.btn{
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  background: $primary;
+  border: none;
+  border-radius: 100vmax;
+  color: #fff;
+  font-size: .65625rem;
+  @media (min-width: $bp2){ font-size: .9375rem; }
+  font-weight: 700;
+  transition: .15s;
+  padding-block: .65625rem;
+  padding-inline: 1.3125rem;
+  @media (min-width: $bp2){
+    padding-block: .9375rem;
+    padding-inline: 1.875rem;
+  }
+  &:hover{
+    background: $btn_hover;
+  }
+
+  &.white{
+    background: #fff;
+    color: #000;
+    &:hover{
+      background: $btn_white_hover;
+    }
+  }
+
+  &.disabled{
+    opacity: .35;
+    pointer-events: none;
+  }
+}

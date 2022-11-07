@@ -1,0 +1,37 @@
+header.details{
+  border-bottom: 1px solid #e0e0e059;
+  .wrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5625rem;
+    padding-block: .9375rem;
+    .poster{
+      display: none;
+      @media (min-width: $bp3){ display: block; }
+      pointer-events: none;
+      position: relative;
+      aspect-ratio: 100/147;
+      width: 100%;
+      max-width: 46px;
+    }
+    .details{
+      h1{
+        font-size: 1.2rem;
+        @media (min-width: $bp3){ font-size: 1.6rem; }
+        @media (min-width: $bp6){ font-size: 2.5rem; }
+        font-weight: 700;
+        margin-block-end: .25rem;
+      }
+      div{
+        text-transform: uppercase;
+        font-size: .5625rem;
+        @media (min-width: $bp3){ font-size: .65rem; }
+        @media (min-width: $bp6){ font-size: .75rem; }
+        font-weight: 500;
+        span{
+          margin-inline: .5625rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.warning{
+  background: $primary;
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    div{
+      line-height: 1.4;
+      padding-block: .5rem;
+    }
+    label{
+      cursor: pointer;
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background: #fff;
+      }
+      &::before{
+        transform: rotate(45deg);
+      }
+      &::after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js": { "integrity": "sha512-ZExRNIyTl4RbyIgrFq2vnam+DhCwy91O7JYL4cCqZj8tc0+soNMJv359aXuHkWWvTYe0rWYH3YPsHP8xvDKxXw==", "contentType": "application/javascript; charset=utf-8" },
+  "version": 1
+}
