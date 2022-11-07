@@ -66,7 +66,7 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
       </Head>
       <Header/>
       <main className="details">
-        <div className="hero" style={{backgroundImage: "url('" + hero_url + "')"}}>
+        <div className="hero" style={{backgroundImage: "url('" + hero_url + "')"}} loading="lazy">
           <div className="wrapper">
             <h1 className="title">{ movie.title }</h1>
             <Link href={"/showtimes/" + movie.id}><a className="btn">Get Tickets</a></Link>
