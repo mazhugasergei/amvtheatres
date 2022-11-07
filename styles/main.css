@@ -62,6 +62,10 @@ ul {
   font-weight: 900;
 }
 .logo {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: "Manjari", sans-serif;
   text-align: center;
   color: #E51937;
@@ -709,6 +713,10 @@ header.details .wrapper .details div span {
   }
 }
 .films-list .card .poster {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: relative;
   width: 100%;
   aspect-ratio: 100/147;

@@ -12,6 +12,7 @@
     @media (min-width: $bp5){ margin-block: 4rem; }
     @media (min-width: $bp8){ margin-block: 5rem; }
     .poster{
+      user-select: none;
       position: relative;
       width: 100%;
       aspect-ratio: 100/147;
