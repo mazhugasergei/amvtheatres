@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&display=swap");
+:root {
+  --wrapper-padding: 15px;
+}
+@media (min-width: 425px) {
+  :root {
+    --wrapper-padding: 20px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -13,15 +22,6 @@ body {
 
 ul {
   list-style: none;
-}
-
-:root {
-  --wrapper-padding: 15px;
-}
-@media (min-width: 425px) {
-  :root {
-    --wrapper-padding: 20px;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -142,6 +142,10 @@ h1, h3, h4 {
 }
 
 .warning {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background: #E51937;
 }
 .warning .wrapper {
@@ -244,6 +248,10 @@ h1, h3, h4 {
 }
 
 header:not(.details) {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: -webkit-sticky;
   position: sticky;
   z-index: 999;
@@ -449,6 +457,10 @@ header:not(.details) i {
 }
 
 footer {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background: #171717;
 }
 footer .links {
@@ -624,6 +636,10 @@ header.details .wrapper {
   padding-block: 0.9375rem;
 }
 header.details .wrapper .poster {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: none;
   pointer-events: none;
   position: relative;
@@ -1211,6 +1227,10 @@ header.details .wrapper .details div span {
 }
 
 .showtimes .dates {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: -webkit-sticky;
   position: sticky;
   z-index: 999;
@@ -1314,6 +1334,10 @@ header.details .wrapper .details div span {
           margin-block-end: 1.5rem;
 }
 .showtimes .video_times .times .cells {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   gap: 1rem;
@@ -1339,6 +1363,10 @@ main.seats .hall {
           padding-block-end: 20px;
 }
 main.seats .hall .screen {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   align-self: center;
   width: 1050px;
   aspect-ratio: 7/1;
@@ -1380,6 +1408,10 @@ main.seats .hall .seats input:checked ~ label {
   background: #E51937 !important;
 }
 main.seats .types {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: flex;
   flex-flow: column;
   gap: 0.6rem;
@@ -1504,6 +1536,12 @@ main.seats .continue .wrapper .btn {
   display: flex;
   flex-flow: column;
 }
+.payment form span {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 .payment form input {
   min-width: 100px;
   color: #fff;
@@ -1542,6 +1580,10 @@ main.seats .continue .wrapper .btn {
   justify-content: center;
 }
 .complete h1 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-align: center;
   line-height: 1.3;
 }

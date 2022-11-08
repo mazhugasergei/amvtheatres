@@ -5,6 +5,9 @@
     max-width: 24.6875rem;
     display: flex;
     flex-flow: column;
+    span{
+      user-select: none;
+    }
     input{
       &:not([type=email]){
         // pointer-events: none;

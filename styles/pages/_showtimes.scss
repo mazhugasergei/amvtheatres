@@ -1,6 +1,7 @@
 .showtimes{
 
   .dates{
+    user-select: none;
     position: sticky;
     z-index: 999;
     background: #000;
@@ -94,6 +95,7 @@
         margin-block-end: 1.5rem;
       }
       .cells{
+        user-select: none;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(7rem), 1fr));
         gap: 1rem;

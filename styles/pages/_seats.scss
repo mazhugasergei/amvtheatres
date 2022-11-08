@@ -5,6 +5,7 @@ main.seats{
     padding-block-end: 20px;
 
     .screen{
+      user-select: none;
       align-self: center;
       width: 1050px;
       aspect-ratio: 7/1;
@@ -41,6 +42,7 @@ main.seats{
   }
 
   .types{
+    user-select: none;
     display: flex;
     flex-flow: column;
     gap: .6rem;
