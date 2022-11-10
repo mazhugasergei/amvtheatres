@@ -1,1 +1,1 @@
-*** Website Link: *** amvtheatres.cercel.app
+***Link:*** amvtheatres.cercel.app
