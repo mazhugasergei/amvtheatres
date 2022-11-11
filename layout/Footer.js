@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="container">
         <div className="wrapper">
           <div className="copyright"><span>© Copyright 2022 AMV&nbsp;Theatres</span><a className="logo" href="/"><div>amv</div><div>theatres</div></a></div>
-          <div className="attention">This website is made as a demo for a university project. This is not a real movie tickets selling website. You will also not be able to pay&nbsp;here.</div>
+          <div className="attention">This website is made as a demo for a university project. This is not a real movie tickets selling&nbsp;website.</div>
         </div>
       </div>
     </footer>

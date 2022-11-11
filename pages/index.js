@@ -18,6 +18,12 @@ export const getServerSideProps = async () => {
 }
 
 export default function Home({ movies, posters_urls }) {
+  const warningDisappear = (e) => {
+    const cont = e.target.parentElement.parentElement
+    cont.style.transform="translateY(-100%)"
+    cont.style.marginBottom= -1 * cont.offsetHeight + "px"
+  }
+
   return (
     <>
       <Head>
@@ -25,21 +31,21 @@ export default function Home({ movies, posters_urls }) {
       </Head>
       <div className="warning">
         <div className="wrapper">
-          <div>This website is made as a demo for a university project. This is not a real movie tickets selling website. You will also not be able to pay&nbsp;here.</div>
-          <label onClick={(e)=>{e.target.parentElement.parentElement.style.display="none"}} />
+          <div>This website is made as a demo for a university project. This is not a real movie tickets selling&nbsp;website.</div>
+          <label onClick={warningDisappear} />
         </div>
       </div>
       <Header/>
       <main className="films-list wrapper">
         {movies.map((movie, i) => (
           <div className="card" key={i}>
-            <Link href={"/details/" + movie.id}><a className="poster"><Image src={posters_urls[i]} layout="fill" priority="true"/></a></Link>
+            <Link href={"/details/" + movie.id}><a></a></Link>
+            <div className="poster"><Image src={posters_urls[i]} layout="fill" priority="true"/></div>
             <div className="content">
-              <Link href={"/details/" + movie.id}><a className="title">{ movie.title }</a></Link>
+              <a className="title">{ movie.title }</a>
               <div className="description">{ movie.description }</div>
               <div>{ movie.duration }<span>|</span>{ movie.rating }</div>
               <div>Released { movie.release_date }</div>
-              <Link href={"/showtimes/" + movie.id}><a className="btn">Get Tickets</a></Link>
             </div>
           </div>
         ))}

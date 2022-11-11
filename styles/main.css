@@ -146,7 +146,9 @@ h1, h3, h4 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  position: relative;
   background: #E51937;
+  transition: 0.2s;
 }
 .warning .wrapper {
   display: flex;
@@ -688,6 +690,7 @@ header.details .wrapper .details div span {
 }
 
 .films-list .card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 1.1rem;
@@ -728,6 +731,12 @@ header.details .wrapper .details div span {
     margin-block: 5rem;
   }
 }
+.films-list .card > a {
+  position: absolute;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+}
 .films-list .card .poster {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -754,14 +763,9 @@ header.details .wrapper .details div span {
     max-width: 200px;
   }
 }
-@media (min-width: 768px) {
-  .films-list .card .poster {
-    max-width: 300px;
-  }
-}
 @media (min-width: 1024px) {
   .films-list .card .poster {
-    max-width: 338px;
+    max-width: 280px;
   }
 }
 .films-list .card .content .title {
@@ -849,16 +853,6 @@ header.details .wrapper .details div span {
     font-size: 0.875rem;
   }
 }
-.films-list .card .content .btn {
-  -webkit-margin-before: 0.7rem;
-          margin-block-start: 0.7rem;
-}
-@media (min-width: 375px) {
-  .films-list .card .content .btn {
-    -webkit-margin-before: 1rem;
-            margin-block-start: 1rem;
-  }
-}
 
 .details h1, .details h3 {
   letter-spacing: -0.04em;
@@ -869,6 +863,7 @@ header.details .wrapper .details div span {
   height: 315px;
   display: flex;
   flex-flow: column;
+  background-color: #222;
   justify-content: flex-end;
   background-size: cover;
   background-position: center;
@@ -1072,6 +1067,7 @@ header.details .wrapper .details div span {
   flex-shrink: 0;
   width: 100%;
   aspect-ratio: 16/9;
+  background-color: #222;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

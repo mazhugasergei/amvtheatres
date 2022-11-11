@@ -1,6 +1,8 @@
 .warning{
   user-select: none;
+  position: relative;
   background: $primary;
+  transition: .2s;
   .wrapper{
     display: flex;
     justify-content: space-between;

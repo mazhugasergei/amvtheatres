@@ -11,6 +11,7 @@
     @media (min-width: $bp8){ height: 450px; }
     display: flex;
     flex-flow: column;
+    background-color: #222;
     justify-content: flex-end;
     background-size: cover;
     background-position: center;
@@ -99,6 +100,7 @@
         flex-shrink: 0;
         width: 100%;
         aspect-ratio: 16/9;
+        background-color: #222;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
