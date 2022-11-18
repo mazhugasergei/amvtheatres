@@ -32,6 +32,7 @@
     }
     .content{
       .title{
+        @media (forced-colors){ color: linkText; }
         display: block;
         font-size: 1.3125rem;
         @media (min-width: $bp2){ font-size: 1.5rem; }

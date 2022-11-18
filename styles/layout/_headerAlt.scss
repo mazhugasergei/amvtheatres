@@ -18,6 +18,7 @@ header.alt{
       display: grid;
       place-items: center;
       &::before, &::after{
+        @media (forced-colors){ background: canvasText; }
         content: '';
         position: absolute;
         width: 25px;

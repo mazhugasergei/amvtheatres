@@ -7,6 +7,7 @@
     background: #000;
     border-bottom: 1px solid #e0e0e059;
     select{
+      @media (forced-colors){ color: highlight; }
       cursor: pointer;
       display: block;
       height: 3.75rem;
@@ -57,6 +58,7 @@
             background: #0000003c;
           }
           svg{
+            @media (forced-colors){ fill: highlight; }
             pointer-events: none;
             width: 15%;
             aspect-ratio: 1/1;

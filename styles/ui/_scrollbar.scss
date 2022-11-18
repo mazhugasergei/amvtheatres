@@ -6,6 +6,7 @@
   background: #000;
 }
 ::-webkit-scrollbar-thumb {
+  @media (forced-colors){ background: canvasText; }
   background: #333;
 }
 ::-webkit-scrollbar-corner {

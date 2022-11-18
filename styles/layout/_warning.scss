@@ -1,4 +1,5 @@
 .warning{
+  @media (forced-colors){ border-bottom: 1px solid #fff; }
   user-select: none;
   position: relative;
   background: $primary;
@@ -20,6 +21,7 @@
       display: grid;
       place-items: center;
       &::before, &::after{
+        @media (forced-colors){ background: canvasText; }
         content: '';
         position: absolute;
         width: 25px;

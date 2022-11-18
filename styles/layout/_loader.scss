@@ -10,7 +10,8 @@
   .loading-bar, .loading-bar:before, .loading-bar:after{
     width: 1rem;
     height: 3rem;
-    background-color: #fff;
+    @media (forced-colors){ background: canvasText; }
+    background: #fff;
     animation: animateBar 1s ease-in-out infinite;
   }
   .loading-bar{

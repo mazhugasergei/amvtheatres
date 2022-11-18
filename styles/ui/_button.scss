@@ -1,4 +1,10 @@
 .btn{
+  @media (forced-colors){
+    outline: 2px solid transparent;
+    &:hover{
+      outline-width: 5px;
+    }
+  }
   cursor: pointer;
   user-select: none;
   display: inline-block;

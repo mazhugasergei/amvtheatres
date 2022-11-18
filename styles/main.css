@@ -36,6 +36,11 @@ ul {
 ::-webkit-scrollbar-thumb {
   background: #333;
 }
+@media (forced-colors) {
+  ::-webkit-scrollbar-thumb {
+    background: canvasText;
+  }
+}
 
 ::-webkit-scrollbar-corner {
   background: rgba(0, 0, 0, 0);
@@ -115,6 +120,14 @@ h1, h3, h4 {
   padding-block: 0.65625rem;
   padding-inline: 1.3125rem;
 }
+@media (forced-colors) {
+  .btn {
+    outline: 2px solid transparent;
+  }
+  .btn:hover {
+    outline-width: 5px;
+  }
+}
 @media (min-width: 375px) {
   .btn {
     font-size: 0.9375rem;
@@ -150,6 +163,11 @@ h1, h3, h4 {
   background: #E51937;
   transition: 0.2s;
 }
+@media (forced-colors) {
+  .warning {
+    border-bottom: 1px solid #fff;
+  }
+}
 .warning .wrapper {
   display: flex;
   justify-content: space-between;
@@ -175,6 +193,11 @@ h1, h3, h4 {
   height: 2px;
   background: #fff;
 }
+@media (forced-colors) {
+  .warning .wrapper label::before, .warning .wrapper label::after {
+    background: canvasText;
+  }
+}
 .warning .wrapper label::before {
   transform: rotate(45deg);
 }
@@ -195,9 +218,14 @@ h1, h3, h4 {
 .loader .loading-bar, .loader .loading-bar:before, .loader .loading-bar:after {
   width: 1rem;
   height: 3rem;
-  background-color: #fff;
+  background: #fff;
   -webkit-animation: animateBar 1s ease-in-out infinite;
           animation: animateBar 1s ease-in-out infinite;
+}
+@media (forced-colors) {
+  .loader .loading-bar, .loader .loading-bar:before, .loader .loading-bar:after {
+    background: canvasText;
+  }
 }
 .loader .loading-bar {
   -webkit-animation-delay: -0.16s;
@@ -298,6 +326,11 @@ header:not(.details) label div {
   height: 2px;
   background: #fff;
   transition: 0.15s;
+}
+@media (forced-colors) {
+  header:not(.details) label div {
+    background: canvasText;
+  }
 }
 header:not(.details) #menuBtn:checked ~ label {
   gap: 0;
@@ -410,6 +443,7 @@ header:not(.details) ul li a {
   header:not(.details) ul li a {
     position: relative;
     transition: 0.15s;
+    padding-inline: 1rem;
   }
   header:not(.details) ul li a span {
     display: flex;
@@ -424,15 +458,15 @@ header:not(.details) ul li a {
     box-shadow: inset 0 -2px #00a8e1;
   }
 }
-@media (min-width: 860px) {
-  header:not(.details) ul li a {
-    padding-inline: 1rem;
-  }
-}
 header:not(.details) ul li a svg {
   width: 20px;
   height: 20px;
   margin-inline: 3px;
+}
+@media (forced-colors) {
+  header:not(.details) ul li a svg {
+    fill: linkText;
+  }
 }
 @media (min-width: 860px) {
   header:not(.details) ul li a svg {
@@ -455,6 +489,11 @@ header:not(.details) i {
 @media (min-width: 860px) {
   header:not(.details) i {
     max-width: 28px;
+  }
+}
+@media (forced-colors) {
+  header:not(.details) i svg {
+    fill: canvasText;
   }
 }
 
@@ -621,6 +660,11 @@ header.alt .wrapper a::before, header.alt .wrapper a::after {
   height: 2px;
   background: #fff;
 }
+@media (forced-colors) {
+  header.alt .wrapper a::before, header.alt .wrapper a::after {
+    background: canvasText;
+  }
+}
 header.alt .wrapper a::before {
   transform: rotate(45deg);
 }
@@ -775,6 +819,11 @@ header.details .wrapper .details div span {
   letter-spacing: -0.03rem;
   -webkit-margin-after: 0.65625rem;
           margin-block-end: 0.65625rem;
+}
+@media (forced-colors) {
+  .films-list .card .content .title {
+    color: linkText;
+  }
 }
 @media (min-width: 375px) {
   .films-list .card .content .title {
@@ -1103,6 +1152,11 @@ header.details .wrapper .details div span {
   background: #000;
   border-color: #fff;
 }
+@media (forced-colors) {
+  .details .carousel nav input:checked ~ label {
+    background: canvasText;
+  }
+}
 .details .ppl {
   padding-block: 6.25rem;
 }
@@ -1244,6 +1298,11 @@ header.details .wrapper .details div span {
   border: none;
   margin-inline: auto;
 }
+@media (forced-colors) {
+  .showtimes .dates select {
+    color: highlight;
+  }
+}
 .showtimes .dates select option {
   font-size: 0.8rem;
 }
@@ -1288,6 +1347,11 @@ header.details .wrapper .details div span {
   pointer-events: none;
   width: 15%;
   aspect-ratio: 1/1;
+}
+@media (forced-colors) {
+  .showtimes .video_times .details .video .preview svg {
+    fill: highlight;
+  }
 }
 .showtimes .video_times .details .video iframe {
   width: 100%;
@@ -1378,6 +1442,12 @@ main.seats .hall .screen {
   -webkit-margin-before: 30px;
           margin-block-start: 30px;
 }
+@media (forced-colors) {
+  main.seats .hall .screen {
+    border-width: 0;
+    border-top-width: 10px;
+  }
+}
 main.seats .hall .seats {
   display: grid;
   grid-template-columns: repeat(16, auto);
@@ -1402,6 +1472,11 @@ main.seats .hall .seats label {
 }
 main.seats .hall .seats input:checked ~ label {
   background: #E51937 !important;
+}
+@media (forced-colors) {
+  main.seats .hall .seats input:checked ~ label {
+    background: highlight !important;
+  }
 }
 main.seats .types {
   -webkit-user-select: none;
@@ -1434,6 +1509,11 @@ main.seats .types ul:nth-child(1) li:nth-child(2) div {
 }
 main.seats .types ul:nth-child(2) li:nth-child(2) div {
   background: #E51937;
+}
+@media (forced-colors) {
+  main.seats .types ul:nth-child(2) li:nth-child(2) div {
+    background: highlight;
+  }
 }
 main.seats .types ul:nth-child(2) li:nth-child(3) div {
   opacity: 0.4;

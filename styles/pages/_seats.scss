@@ -5,6 +5,10 @@ main.seats{
     padding-block-end: 20px;
 
     .screen{
+      @media (forced-colors){
+        border-width: 0;
+        border-top-width: 10px;
+      }
       user-select: none;
       align-self: center;
       width: 1050px;
@@ -36,6 +40,7 @@ main.seats{
         font-size: 12px;
       }
       input:checked ~ label{
+        @media (forced-colors){ background: highlight !important; }
         background: $primary !important;
       }
     }
@@ -65,7 +70,10 @@ main.seats{
       &:nth-child(1) li:nth-child(2) div{ border-radius: 50%; }
       &:nth-child(2){
         li{
-          &:nth-child(2) div{ background: $primary; }
+          &:nth-child(2) div{
+            @media (forced-colors){ background: highlight; }
+            background: $primary;
+          }
           &:nth-child(3) div{ opacity: 0.4; }
         }
       }
