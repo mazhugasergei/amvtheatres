@@ -3,22 +3,26 @@
 
 // Gordita
 @font-face {
-  font-family: "Gordita";
-  src: url('/fonts/Gordita/Gordita\ Regular.otf');
-  font-weight: 400;
+  font-family: 'Gordita';
+  src: url('/fonts/Gordita\ Web/gordita_black-webfont.woff2') format('woff2'),
+       url('/fonts/Gordita\ Web/gordita_black-webfont.woff') format('woff');
+  font-weight: 900;
 }
 @font-face {
-  font-family: "Gordita";
-  src: url('/fonts/Gordita/Gordita\ Medium.otf');
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Gordita";
-  src: url('/fonts/Gordita/Gordita\ Bold.otf');
+  font-family: 'Gordita';
+  src: url('/fonts/Gordita\ Web/gordita_bold-webfont.woff2') format('woff2'),
+       url('/fonts/Gordita\ Web/gordita_bold-webfont.woff') format('woff');
   font-weight: 700;
 }
 @font-face {
-  font-family: "Gordita";
-  src: url('/fonts/Gordita/Gordita\ Ultra.otf');
-  font-weight: 900;
+  font-family: 'Gordita';
+  src: url('/fonts/Gordita\ Web/gordita_medium-webfont.woff2') format('woff2'),
+       url('/fonts/Gordita\ Web/gordita_medium-webfont.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Gordita';
+  src: url('/fonts/Gordita\ Web/gordita_regular-webfont.woff2') format('woff2'),
+       url('/fonts/Gordita\ Web/gordita_regular-webfont.woff') format('woff');
+  font-weight: 400;
 }

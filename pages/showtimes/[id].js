@@ -14,28 +14,7 @@ import HeaderAlt from "../../layout/HeaderAlt"
 export const getServerSideProps = async (context) => {
   let id = context.params.id
   let movie = await getMovies(id)
-  let hero_url = await getImage('amv-theatres/hero/' + id + '.jpg')
-  return{
-    props: { movie, hero_url }
-  }
-}
 
-
-
-
-
-const Showtimes = ({ movie, hero_url }) => {
-  /* SET DATES FIELD TOP POSITION */
-  useEffect(()=>{
-    document.querySelector('.showtimes .dates').style.top = document.querySelector('header.alt').offsetHeight + "px"
-  }, [])
-
-  /* SET TIMES SECTION HEIGHT */
-  useEffect(()=>{
-    document.querySelector('.showtimes .times').style.maxHeight = (window.innerHeight - document.querySelector('header.alt').offsetHeight - document.querySelector('.showtimes .dates').offsetHeight) + "px"
-  }, [])
-
-  /* STORE ALL THE DATES */
   let dates = {}
   movie.showtimes.split(", ").forEach(item => {
     // show date if it is later than now
@@ -47,9 +26,28 @@ const Showtimes = ({ movie, hero_url }) => {
     }
   })
 
+  let hero_url = await getImage('amv-theatres/hero/' + id + '.jpg')
+  
+  return{
+    props: { movie, dates, hero_url }
+  }
+}
+
+
+
+
+
+const Showtimes = ({ movie, dates, hero_url }) => {
+  useEffect(()=>{
+    /* SET DATES FIELD TOP POSITION */
+    document.querySelector('.showtimes .dates').style.top = document.querySelector('header.alt').offsetHeight + "px"
+    /* SET TIMES SECTION HEIGHT */
+    document.querySelector('.showtimes .times').style.maxHeight = (window.innerHeight - document.querySelector('header.alt').offsetHeight - document.querySelector('.showtimes .dates').offsetHeight) + "px"
+  }, [])
+
   /* DATE ONCHANGE HANDLER */
   const changeDate = (e) => {
-    const select = document.querySelector('.sessions .dates select')
+    const select = document.querySelector('.showtimes .dates select')
     setSelectedDate(select.options[select.selectedIndex].value)
   }
 

@@ -48,23 +48,23 @@ ul {
 
 @font-face {
   font-family: "Gordita";
-  src: url("/fonts/Gordita/Gordita Regular.otf");
-  font-weight: 400;
+  src: url("/fonts/Gordita Web/gordita_black-webfont.woff2") format("woff2"), url("/fonts/Gordita Web/gordita_black-webfont.woff") format("woff");
+  font-weight: 900;
 }
 @font-face {
   font-family: "Gordita";
-  src: url("/fonts/Gordita/Gordita Medium.otf");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Gordita";
-  src: url("/fonts/Gordita/Gordita Bold.otf");
+  src: url("/fonts/Gordita Web/gordita_bold-webfont.woff2") format("woff2"), url("/fonts/Gordita Web/gordita_bold-webfont.woff") format("woff");
   font-weight: 700;
 }
 @font-face {
   font-family: "Gordita";
-  src: url("/fonts/Gordita/Gordita Ultra.otf");
-  font-weight: 900;
+  src: url("/fonts/Gordita Web/gordita_medium-webfont.woff2") format("woff2"), url("/fonts/Gordita Web/gordita_medium-webfont.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Gordita";
+  src: url("/fonts/Gordita Web/gordita_regular-webfont.woff2") format("woff2"), url("/fonts/Gordita Web/gordita_regular-webfont.woff") format("woff");
+  font-weight: 400;
 }
 .logo {
   -webkit-user-select: none;
@@ -1291,11 +1291,19 @@ header.details .wrapper .details div span {
   cursor: pointer;
   display: block;
   height: 3.75rem;
-  background: #000;
+  background: url("/arrow.svg");
+  background-size: 10%;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
   border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-padding-end: 1rem;
+          padding-inline-end: 1rem;
   margin-inline: auto;
 }
 @media (forced-colors) {
@@ -1354,10 +1362,9 @@ header.details .wrapper .details div span {
   }
 }
 .showtimes .video_times .details .video iframe {
+  display: block;
   width: 100%;
   aspect-ratio: 16/9;
-  -webkit-margin-after: 1.6rem;
-          margin-block-end: 1.6rem;
 }
 .showtimes .video_times .details h2 {
   -webkit-margin-after: 0.6875rem;
@@ -1431,7 +1438,8 @@ main.seats .hall .screen {
   width: 1050px;
   aspect-ratio: 7/1;
   background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.5019607843), transparent 70%);
-  border: 10px solid #000;
+  background-origin: border-box;
+  border: 10px solid transparent;
   border-top-color: #fff;
   border-radius: 200%;
   text-align: center;
@@ -1661,7 +1669,7 @@ main.seats .continue .wrapper .btn {
       -ms-user-select: none;
           user-select: none;
   text-align: center;
-  line-height: 1.3;
+  line-height: 2;
 }
 .complete .btn {
   -webkit-margin-before: 1rem;

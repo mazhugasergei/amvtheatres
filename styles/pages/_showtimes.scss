@@ -11,11 +11,16 @@
       cursor: pointer;
       display: block;
       height: 3.75rem;
-      background: #000;
+      background: url('/arrow.svg');
+      background-size: 10%;
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
       color: #fff;
       font-weight: 700;
       font-size: 1rem;
       border: none;
+      appearance: none;
+      padding-inline-end: 1rem;
       margin-inline: auto;
       option{
         font-size: .8rem;
@@ -65,10 +70,9 @@
           }
         }
         iframe{
+          display: block;
           width: 100%;
           aspect-ratio: 16/9;
-          margin-block-end: 1.6rem;
-          // margin-block-end: 2.625rem;
         }
       }
       h2{

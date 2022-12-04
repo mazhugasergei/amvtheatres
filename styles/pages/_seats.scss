@@ -14,7 +14,8 @@ main.seats{
       width: 1050px;
       aspect-ratio: 7/1;
       background: radial-gradient(ellipse at top, #ffffff80, transparent 70%);
-      border: 10px solid #000;
+      background-origin: border-box;
+      border: 10px solid transparent;
       border-top-color: #fff;
       border-radius: 200%;
       text-align: center;

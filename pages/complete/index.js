@@ -10,7 +10,7 @@ const Complete = () => {
       </Head>
       <main className="complete wrapper">
         <h1>Done!</h1>
-        <h1>Check your Email (not available yet) and see you in our&nbsp;theatre!</h1>
+        <h3>Check your Email (not available yet) and see you in our&nbsp;theatre!</h3>
         <Link href="/"><a className="btn">Home</a></Link>
       </main>
     </>

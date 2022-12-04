@@ -33,7 +33,7 @@ const Payment = () => {
       <main className="payment wrapper">
         <form onSubmit={formSubmit}>
           <span>Email</span>
-          <input type="email" required />
+          <input type="email" required onKeyDown={(e)=>{if(e.keyCode == 32) return false}}/>
           <span>Card Number</span>
           <input type="text" disabled />
           <span>Name</span>
