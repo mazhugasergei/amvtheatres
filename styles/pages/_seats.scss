@@ -60,6 +60,7 @@ main.seats{
       flex-wrap: wrap;
       li{
         display: flex;
+        align-items: center;
         gap: .4rem;
         div{
           width: 20px;
@@ -82,7 +83,7 @@ main.seats{
   }
 
   .continue{
-    border-top: 1px solid #e0e0e059;
+    border-top: .0625rem solid #e0e0e059;
     padding-block: 1rem;
     .wrapper{
       display: flex;
@@ -100,6 +101,10 @@ main.seats{
       .btn{
         margin-inline-start: 1rem;
         @media (min-width: $bp4){ margin-inline-start: 3.125rem; }
+        div{
+          border-top-color: #000;
+          border-left-color: #000;
+        }
       }
     }
   }

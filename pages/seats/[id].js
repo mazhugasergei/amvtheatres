@@ -63,6 +63,19 @@ const Seats = ({ movie, poster_url }) => {
     document.querySelector('.seats .continue a').href = "/summary/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + selectedSeats.toString()
   }, [selectedSeats])
 
+  /* ADD BUTTON LOADING ANIMATION */
+  useEffect(()=>{
+    const btn = document.querySelector('.continue .btn')
+    btn.addEventListener("click", ()=>{
+      if(!btn.classList.contains('disabled')){
+        btn.style.width = btn.offsetWidth + "px"
+        btn.style.height = btn.offsetHeight + "px"
+        btn.innerHTML = ""
+        btn.appendChild(document.createElement('div'))
+      }
+    })
+  }, [])
+
   return (
     <>
       <Head>

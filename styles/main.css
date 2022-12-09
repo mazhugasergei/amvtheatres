@@ -109,7 +109,8 @@ h1, h3, h4 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  display: inline-block;
+  display: inline-grid;
+  place-items: center;
   background: #E51937;
   border: none;
   border-radius: 100vmax;
@@ -152,6 +153,32 @@ h1, h3, h4 {
 .btn.disabled {
   opacity: 0.35;
   pointer-events: none;
+}
+.btn div {
+  aspect-ratio: 1/1;
+  height: 80%;
+  border-radius: 50%;
+  border: 0.2rem solid transparent;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  -webkit-animation: 1s loading linear infinite;
+          animation: 1s loading linear infinite;
+}
+@-webkit-keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .warning {
@@ -1504,6 +1531,7 @@ main.seats .types ul {
 }
 main.seats .types ul li {
   display: flex;
+  align-items: center;
   gap: 0.4rem;
 }
 main.seats .types ul li div {
@@ -1527,7 +1555,7 @@ main.seats .types ul:nth-child(2) li:nth-child(3) div {
   opacity: 0.4;
 }
 main.seats .continue {
-  border-top: 1px solid rgba(224, 224, 224, 0.3490196078);
+  border-top: 0.0625rem solid rgba(224, 224, 224, 0.3490196078);
   padding-block: 1rem;
 }
 main.seats .continue .wrapper {
@@ -1556,6 +1584,10 @@ main.seats .continue .wrapper .btn {
     -webkit-margin-start: 3.125rem;
             margin-inline-start: 3.125rem;
   }
+}
+main.seats .continue .wrapper .btn div {
+  border-top-color: #000;
+  border-left-color: #000;
 }
 
 .summary .checkout {
