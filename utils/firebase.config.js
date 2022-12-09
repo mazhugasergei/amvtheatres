@@ -1,8 +1,5 @@
 import { initializeApp } from "firebase/app"
 
-
-export const collection_name = "amv-theatres"
-
 export const app = initializeApp(
   {
     apiKey: "AIzaSyBOziZsv-JVQ7RXhl9BgPtIKJOX9hGzQ2g",
