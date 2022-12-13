@@ -92,7 +92,7 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
           <nav>
             { screenshots_urls.map((ulr, i) => (
               <div key={i}>
-                <input type="radio" name="carousel-input" id={"input_" + i} defaultChecked={i == 0}/>
+                <input type="radio" name="carousel-input" id={"input_" + i} defaultChecked={i == 0} onFocus={moveSlides} data-index={i}/>
                 <label htmlFor={"input_" + i} onClick={moveSlides} data-index={i}/>
               </div>
             )) }

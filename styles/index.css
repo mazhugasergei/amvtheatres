@@ -103,6 +103,11 @@ h1, h3, h4 {
   font-weight: 900;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 .btn {
   cursor: pointer;
   -webkit-user-select: none;
@@ -179,57 +184,6 @@ h1, h3, h4 {
   to {
     transform: rotate(360deg);
   }
-}
-
-.warning {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  position: relative;
-  background: #E51937;
-  transition: 0.2s;
-}
-@media (forced-colors) {
-  .warning {
-    border-bottom: 1px solid #fff;
-  }
-}
-.warning .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.warning .wrapper div {
-  line-height: 1.4;
-  padding-block: 0.5rem;
-}
-.warning .wrapper label {
-  cursor: pointer;
-  position: relative;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-}
-.warning .wrapper label::before, .warning .wrapper label::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 2px;
-  background: #fff;
-}
-@media (forced-colors) {
-  .warning .wrapper label::before, .warning .wrapper label::after {
-    background: canvasText;
-  }
-}
-.warning .wrapper label::before {
-  transform: rotate(45deg);
-}
-.warning .wrapper label::after {
-  transform: rotate(-45deg);
 }
 
 .loader {
@@ -320,11 +274,10 @@ header:not(.details) > .wrapper {
   height: 60px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-@media (min-width: 860px) {
+@media (max-width: 860px) {
   header:not(.details) > .wrapper {
-    align-items: stretch;
+    align-items: center;
   }
 }
 header:not(.details) input[type=checkbox] {
@@ -394,41 +347,40 @@ header:not(.details) .logo {
     transform: unset;
   }
 }
-header:not(.details) ul {
-  visibility: hidden;
-  opacity: 0;
+header:not(.details) .skip {
+  align-self: center;
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transition: 0.15s;
-  background: #000;
+  z-index: 999;
+  height: 70%;
+  background: #222;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 900;
+  transform: translateX(6rem);
+  border-radius: 100vmax;
+  padding-inline: 1.5rem;
+}
+header:not(.details) .skip:not(:focus) {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  header:not(.details) ul {
+    opacity: 0;
+    visibility: hidden;
+    background: #000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: 0.15s;
+  }
 }
 @media (min-width: 860px) {
   header:not(.details) ul {
     display: flex;
     justify-content: center;
-  }
-}
-@media (min-width: 860px) {
-  header:not(.details) ul {
-    visibility: visible;
-  }
-}
-@media (min-width: 860px) {
-  header:not(.details) ul {
-    opacity: 1;
-  }
-}
-@media (min-width: 860px) {
-  header:not(.details) ul {
-    position: static;
-  }
-}
-@media (min-width: 860px) {
-  header:not(.details) ul {
-    height: unset;
   }
 }
 header:not(.details) ul li {
@@ -504,7 +456,7 @@ header:not(.details) #menuBtn:checked ~ ul {
   visibility: visible;
   opacity: 1;
 }
-header:not(.details) i {
+header:not(.details) .search {
   cursor: pointer;
   width: 100%;
   box-sizing: content-box;
@@ -514,12 +466,12 @@ header:not(.details) i {
           margin-inline-end: -12px;
 }
 @media (min-width: 860px) {
-  header:not(.details) i {
+  header:not(.details) .search {
     max-width: 28px;
   }
 }
 @media (forced-colors) {
-  header:not(.details) i svg {
+  header:not(.details) .search svg {
     fill: canvasText;
   }
 }
@@ -758,6 +710,57 @@ header.details .wrapper .details div {
 }
 header.details .wrapper .details div span {
   margin-inline: 0.5625rem;
+}
+
+.warning {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  background: #E51937;
+  transition: 0.2s;
+}
+@media (forced-colors) {
+  .warning {
+    border-bottom: 1px solid #fff;
+  }
+}
+.warning .wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.warning .wrapper div {
+  line-height: 1.4;
+  padding-block: 0.5rem;
+}
+.warning .wrapper button {
+  cursor: pointer;
+  width: 48px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+}
+.warning .wrapper button::before, .warning .wrapper button::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+}
+@media (forced-colors) {
+  .warning .wrapper button::before, .warning .wrapper button::after {
+    background: canvasText;
+  }
+}
+.warning .wrapper button::before {
+  transform: rotate(45deg);
+}
+.warning .wrapper button::after {
+  transform: rotate(-45deg);
 }
 
 .films-list .card {
@@ -1159,7 +1162,9 @@ header.details .wrapper .details div span {
           margin-block-start: 20px;
 }
 .details .carousel nav input {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
 }
 .details .carousel nav label {
   cursor: pointer;

@@ -22,6 +22,7 @@ export default function Home({ movies, posters_urls }) {
     const cont = e.target.parentElement.parentElement
     cont.style.transform="translateY(-100%)"
     cont.style.marginBottom= -1 * cont.offsetHeight + "px"
+    e.target.tabIndex = -1
   }
 
   return (
@@ -32,7 +33,7 @@ export default function Home({ movies, posters_urls }) {
       <div className="warning">
         <div className="wrapper">
           <div>This website is made as a demo for a university project. This is not a real movie tickets selling&nbsp;website.</div>
-          <label onClick={warningDisappear} />
+          <button onClick={warningDisappear} />
         </div>
       </div>
       <Header/>

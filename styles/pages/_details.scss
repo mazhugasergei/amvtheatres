@@ -112,7 +112,15 @@
       justify-content: center;
       gap: 6px;
       margin-block-start: 20px;
-      input{ display: none; }
+      input{
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        // &:focus ~ label{
+        //   outline: .125rem solid #fff;
+        //   outline-offset: .125rem;
+        // }
+      }
       label{
         cursor: pointer;
         display: block;
