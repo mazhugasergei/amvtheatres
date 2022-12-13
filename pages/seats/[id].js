@@ -44,13 +44,15 @@ const Seats = ({ movie, poster_url }) => {
   const [selectedSeats, setSelectedSeats] = useState([])
   const seatClick = (e) => {
     let seats = [...selectedSeats]
-    if(selectedSeats.includes(e.target.innerText)) seats.splice(seats.indexOf(e.target.innerText), 1)
-    else seats.push(e.target.innerText)
+    if(selectedSeats.includes(e.target.dataset.seat)) seats.splice(seats.indexOf(e.target.dataset.seat), 1)
+    else seats.push(e.target.dataset.seat)
     setSelectedSeats([...seats])
   }
   useEffect(()=>{
+    console.log(selectedSeats);
     if(selectedSeats.length){
       document.querySelector('.seats .continue .btn').classList.remove('disabled')
+      document.querySelector('.seats .continue .btn').tabIndex = 0
       document.querySelector('.seats .continue .wrapper div').style.opacity = 1
       document.querySelector('.seats .continue span').innerText = selectedSeats.length
       if(selectedSeats.length != 1) document.querySelectorAll('.seats .continue span')[1].innerText = 's'
@@ -58,6 +60,7 @@ const Seats = ({ movie, poster_url }) => {
     }
     else{
       document.querySelector('.seats .continue .btn').classList.add('disabled')
+      document.querySelector('.seats .continue .btn').tabIndex = -1
       document.querySelector('.seats .continue .wrapper div').style.opacity = 0
     }
     document.querySelector('.seats .continue a').href = "/summary/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + selectedSeats.toString()
@@ -90,8 +93,14 @@ const Seats = ({ movie, poster_url }) => {
             alphabet.map(letter => (
               seatsNums.map(num => (
                 <div key={letter+num}>
-                  <input type="checkbox" id={letter+num} autoComplete="off" />
+                  <input type="checkbox" id={letter+num}
+                    data-seat={letter + num}
+                    autoComplete="off"
+                    tabIndex={movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? -1 : 0}
+                    onChange={seatClick}
+                  />
                   <label htmlFor={letter+num}
+                    data-seat={letter + num}
                     style={{
                       marginInlineEnd: num == 4? "20px" : "unset",
                       marginInlineStart: num == 13? "20px" : "unset",
@@ -120,7 +129,7 @@ const Seats = ({ movie, poster_url }) => {
         <div className="continue">
           <div className="wrapper">
             <div className="selectedNum"><span/> seat<span/> selected</div>
-            <a className="btn white disabled" href="">Continue</a>
+            <a className="btn white disabled" href="" tabIndex={-1}>Continue</a>
           </div>
         </div>
       </main>

@@ -186,6 +186,22 @@ button {
   }
 }
 
+.skip {
+  position: absolute;
+  z-index: 999;
+  background: #222;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 900;
+  border-radius: 100vmax;
+  padding-block: 0.8rem;
+  padding-inline: 1.5rem;
+}
+.skip:not(:focus) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .loader {
   position: fixed;
   width: 100%;
@@ -349,20 +365,7 @@ header:not(.details) .logo {
 }
 header:not(.details) .skip {
   align-self: center;
-  position: absolute;
-  z-index: 999;
-  height: 70%;
-  background: #222;
-  font-size: 1rem;
-  color: #fff;
-  font-weight: 900;
   transform: translateX(6rem);
-  border-radius: 100vmax;
-  padding-inline: 1.5rem;
-}
-header:not(.details) .skip:not(:focus) {
-  opacity: 0;
-  pointer-events: none;
 }
 @media (max-width: 860px) {
   header:not(.details) ul {
@@ -741,8 +744,9 @@ header.details .wrapper .details div span {
   cursor: pointer;
   width: 48px;
   aspect-ratio: 1/1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .warning .wrapper button::before, .warning .wrapper button::after {
   content: "";
@@ -1313,6 +1317,7 @@ header.details .wrapper .details div span {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  display: flex;
   position: -webkit-sticky;
   position: sticky;
   z-index: 999;
@@ -1383,13 +1388,16 @@ header.details .wrapper .details div span {
   height: 100%;
   background: rgba(0, 0, 0, 0.2352941176);
 }
-.showtimes .video_times .details .video .preview svg {
-  pointer-events: none;
+.showtimes .video_times .details .video .preview button {
+  cursor: pointer;
   width: 15%;
   aspect-ratio: 1/1;
 }
+.showtimes .video_times .details .video .preview button svg {
+  pointer-events: none;
+}
 @media (forced-colors) {
-  .showtimes .video_times .details .video .preview svg {
+  .showtimes .video_times .details .video .preview button svg {
     fill: highlight;
   }
 }
@@ -1495,7 +1503,12 @@ main.seats .hall .seats {
   gap: 14px;
 }
 main.seats .hall .seats input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+main.seats .hall .seats input:focus ~ label {
+  border-color: #00a8e1;
 }
 main.seats .hall .seats label {
   cursor: pointer;

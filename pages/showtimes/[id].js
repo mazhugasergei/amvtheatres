@@ -105,7 +105,7 @@ const Showtimes = ({ movie, dates, hero_url }) => {
         <section className="video_times wrapper">
           <div className="details">
             <div className="video">
-              <div className="preview" onClick={createIFrame} style={{ backgroundImage: "url('" + hero_url + "')" }}><svg focusable="false" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 45 45" preserveAspectRatio="xMidYMid meet" fill="#ffffff" width="100%" height="100%"><path d="M22.5 0A22.5 22.5 0 1 0 45 22.5 22.5 22.5 0 0 0 22.5 0zm0 43.172A20.672 20.672 0 1 1 43.172 22.5 20.672 20.672 0 0 1 22.5 43.172z"></path><path d="M19.181 13.331a.9.9 0 0 0-1.462.732v16.874a.9.9 0 0 0 1.462.732l11.616-8.438a.9.9 0 0 0 0-1.49zm.506 15.806V15.864l9 6.637z"></path></svg></div>
+              <div className="preview" onClick={createIFrame} style={{ backgroundImage: "url('" + hero_url + "')" }}><button><svg focusable="false" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 45 45" preserveAspectRatio="xMidYMid meet" fill="#ffffff" width="100%" height="100%"><path d="M22.5 0A22.5 22.5 0 1 0 45 22.5 22.5 22.5 0 0 0 22.5 0zm0 43.172A20.672 20.672 0 1 1 43.172 22.5 20.672 20.672 0 0 1 22.5 43.172z"></path><path d="M19.181 13.331a.9.9 0 0 0-1.462.732v16.874a.9.9 0 0 0 1.462.732l11.616-8.438a.9.9 0 0 0 0-1.49zm.506 15.806V15.864l9 6.637z"></path></svg></button></div>
             </div>
             <h2>{ movie.title }</h2>
             <div>{ movie.duration }<span>|</span>{ movie.rating }</div>

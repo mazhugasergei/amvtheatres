@@ -2,6 +2,7 @@
 
   .dates{
     user-select: none;
+    display: flex;
     position: sticky;
     z-index: 999;
     background: #000;
@@ -62,11 +63,14 @@
             height: 100%;
             background: #0000003c;
           }
-          svg{
-            @media (forced-colors){ fill: highlight; }
-            pointer-events: none;
+          button{
+            cursor: pointer;
             width: 15%;
             aspect-ratio: 1/1;
+            svg{
+              @media (forced-colors){ fill: highlight; }
+              pointer-events: none;
+            }
           }
         }
         iframe{

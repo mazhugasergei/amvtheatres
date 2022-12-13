@@ -29,7 +29,14 @@ main.seats{
       grid-template-columns: repeat(16, auto);
       justify-content: flex-start;
       gap: 14px;
-      input{ display: none; }
+      input{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        &:focus ~ label{
+          border-color: $btn_white_hover;
+        }
+      }
       label{
         cursor: pointer;
         user-select: none;

@@ -56,21 +56,8 @@ header:not(.details){
   }
 
   .skip{
-    &:not(:focus){
-      opacity: 0;
-      pointer-events: none;
-    }
     align-self: center;
-    position: absolute;
-    z-index: 999;
-    height: 70%;
-    background: #222;
-    font-size: 1rem;
-    color: #fff;
-    font-weight: 900;
     transform: translateX(6rem);
-    border-radius: 100vmax;
-    padding-inline: 1.5rem;
   }
 
   ul{

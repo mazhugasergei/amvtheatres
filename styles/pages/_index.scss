@@ -18,8 +18,9 @@
       cursor: pointer;
       width: 48px;
       aspect-ratio: 1/1;
-      display: grid;
-      place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &::before, &::after{
         @media (forced-colors){ background: canvasText; }
         content: '';
