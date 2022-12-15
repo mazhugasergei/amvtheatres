@@ -7,7 +7,7 @@ const HeaderAlt = ({ title }) => {
       <div className="wrapper">
         <a/>
         <span>{ title }</span>
-        <Link href="/"><a/></Link>
+        <Link href="/"><a accessKey="X" aria-label="return to home page" /></Link>
       </div>
     </header>
   )

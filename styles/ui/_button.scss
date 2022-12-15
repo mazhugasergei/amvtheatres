@@ -5,13 +5,13 @@ button{
 
 .btn{
   @media (forced-colors){
-    outline: 2px solid transparent;
+    color: linkText;
+    outline: 2px solid linkText;
     &:hover{
       outline-width: 5px;
     }
   }
   cursor: pointer;
-  user-select: none;
   display: inline-grid;
   place-items: center;
   background: $primary;

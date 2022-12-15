@@ -11,7 +11,7 @@ const Complete = () => {
       <main className="complete wrapper">
         <h1>Done!</h1>
         <h3>Check your Email (not available yet) and see you in our&nbsp;theatre!</h3>
-        <Link href="/"><a className="btn">Home</a></Link>
+        <Link href="/"><a className="btn" accessKey="H">Home</a></Link>
       </main>
     </>
   )

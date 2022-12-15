@@ -6,7 +6,6 @@ header.details{
     gap: 1.5625rem;
     padding-block: .9375rem;
     .poster{
-      user-select: none;
       display: none;
       @media (min-width: $bp3){ display: block; }
       pointer-events: none;

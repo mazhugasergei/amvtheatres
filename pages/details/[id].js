@@ -69,7 +69,7 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
         <div className="hero" style={{backgroundImage: "url('" + hero_url + "')"}} loading="lazy">
           <div className="wrapper">
             <h1 className="title">{ movie.title }</h1>
-            <Link href={"/showtimes/" + movie.id}><a className="btn">Get Tickets</a></Link>
+            <Link href={"/showtimes/" + movie.id}><a className="btn" accessKey="G">Get Tickets</a></Link>
           </div>
         </div>
 

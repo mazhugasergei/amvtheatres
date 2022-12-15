@@ -49,7 +49,7 @@ const Payment = () => {
             <input type="text" disabled />
             <input type="text" disabled />
           </div>
-          <button className="btn">Continue</button>
+          <button className="btn" accessKey="C">Continue</button>
         </form>
       </main>
     </>

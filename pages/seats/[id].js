@@ -29,45 +29,18 @@ export const getServerSideProps = async (context) => {
 
 const Seats = ({ movie, poster_url }) => {
   const router = useRouter()
+  
+  const [selectedSeats, setSelectedSeats] = useState([])
 
   /* DEFINE SEATS' ROWS AND COLUMNS */
   const alpha = Array.from(Array(6)).map((e, i) => i + 65)
   const alphabet = alpha.map((x) => String.fromCharCode(x))
   const seatsNums = Array.from(Array(16)).map((e, i) => i + 1)
 
-  /* CHANGE HALL SECTION HEIGHT */
   useEffect(()=>{
+    /* CHANGE HALL SECTION HEIGHT */
     document.querySelector('.seats .hall').style.height = window.innerHeight - document.querySelector('header.alt').offsetHeight - document.querySelector('header.details').offsetHeight - document.querySelector('.seats .continue').offsetHeight - document.querySelector('.seats .types').offsetHeight - 1 + "px"
-  }, [])
-
-  /* RECORD SEATS SELECTING */
-  const [selectedSeats, setSelectedSeats] = useState([])
-  const seatClick = (e) => {
-    let seats = [...selectedSeats]
-    if(selectedSeats.includes(e.target.dataset.seat)) seats.splice(seats.indexOf(e.target.dataset.seat), 1)
-    else seats.push(e.target.dataset.seat)
-    setSelectedSeats([...seats])
-  }
-  useEffect(()=>{
-    console.log(selectedSeats);
-    if(selectedSeats.length){
-      document.querySelector('.seats .continue .btn').classList.remove('disabled')
-      document.querySelector('.seats .continue .btn').tabIndex = 0
-      document.querySelector('.seats .continue .wrapper div').style.opacity = 1
-      document.querySelector('.seats .continue span').innerText = selectedSeats.length
-      if(selectedSeats.length != 1) document.querySelectorAll('.seats .continue span')[1].innerText = 's'
-      else document.querySelectorAll('.seats .continue span')[1].innerText = ''
-    }
-    else{
-      document.querySelector('.seats .continue .btn').classList.add('disabled')
-      document.querySelector('.seats .continue .btn').tabIndex = -1
-      document.querySelector('.seats .continue .wrapper div').style.opacity = 0
-    }
-    document.querySelector('.seats .continue a').href = "/summary/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + selectedSeats.toString()
-  }, [selectedSeats])
-
-  /* ADD BUTTON LOADING ANIMATION */
-  useEffect(()=>{
+    /* ADD BUTTON LOADING ANIMATION */
     const btn = document.querySelector('.continue .btn')
     btn.addEventListener("click", ()=>{
       if(!btn.classList.contains('disabled')){
@@ -78,6 +51,34 @@ const Seats = ({ movie, poster_url }) => {
       }
     })
   }, [])
+
+  useEffect(()=>{
+    console.log(selectedSeats);
+    if(selectedSeats.length){
+      document.querySelector('.seats .continue .btn').classList.remove('disabled')
+      document.querySelector('.seats .continue .btn').tabIndex = 0
+      document.querySelector('.seats .continue .btn').accessKey = "C"
+      document.querySelector('.seats .continue .wrapper div').style.opacity = 1
+      document.querySelector('.seats .continue span').innerText = selectedSeats.length
+      if(selectedSeats.length != 1) document.querySelectorAll('.seats .continue span')[1].innerText = 's'
+      else document.querySelectorAll('.seats .continue span')[1].innerText = ''
+    }
+    else{
+      document.querySelector('.seats .continue .btn').classList.add('disabled')
+      document.querySelector('.seats .continue .btn').tabIndex = -1
+      document.querySelector('.seats .continue .btn').accessKey = ""
+      document.querySelector('.seats .continue .wrapper div').style.opacity = 0
+    }
+    document.querySelector('.seats .continue a').href = "/summary/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + selectedSeats.toString()
+  }, [selectedSeats])
+
+  /* RECORD SEATS SELECTING */
+  const seatClick = (e) => {
+    let seats = [...selectedSeats]
+    if(selectedSeats.includes(e.target.dataset.seat)) seats.splice(seats.indexOf(e.target.dataset.seat), 1)
+    else seats.push(e.target.dataset.seat)
+    setSelectedSeats([...seats])
+  }
 
   return (
     <>
@@ -108,7 +109,6 @@ const Seats = ({ movie, poster_url }) => {
                       opacity: movie.hasOwnProperty('occupied_seats') && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? ".4" : "unset",
                       pointerEvents: movie.hasOwnProperty('occupied_seats') && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? "none" : "unset"
                     }}
-                    onClick={seatClick}
                   >{ letter + num }</label>
                 </div>
               ))

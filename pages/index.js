@@ -33,14 +33,19 @@ export default function Home({ movies, posters_urls }) {
       <div className="warning">
         <div className="wrapper">
           <div>This website is made as a demo for a university project. This is not a real movie tickets selling&nbsp;website.</div>
-          <button onClick={warningDisappear} />
+          <button onClick={warningDisappear} accessKey="X" aria-label="Close warning message" />
         </div>
       </div>
       <Header/>
-      <main className="films-list wrapper">
+      <main className="films-list wrapper" aria-hidden="hidden">
         {movies.map((movie, i) => (
-          <div className="card" key={i}>
-            <Link href={"/details/" + movie.id}><a></a></Link>
+          <div className="card" key={i}
+            onFocus={()=>{
+              document.querySelector('header #menuBtn').checked = false
+              document.body.style.overflow = "unset"
+            }}
+          >
+            <Link href={"/details/" + movie.id}><a aria-label={movie.title}></a></Link>
             <div className="poster"><Image src={posters_urls[i]} layout="fill" priority="true"/></div>
             <div className="content">
               <a className="title">{ movie.title }</a>

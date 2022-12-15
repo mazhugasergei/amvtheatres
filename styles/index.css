@@ -15,6 +15,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background: #000;
   color: #fff;
   line-height: 1.15;
@@ -67,10 +68,6 @@ ul {
   font-weight: 400;
 }
 .logo {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   font-family: "Manjari", sans-serif;
   text-align: center;
   color: #E51937;
@@ -110,10 +107,6 @@ button {
 
 .btn {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   display: inline-grid;
   place-items: center;
   background: #E51937;
@@ -128,7 +121,8 @@ button {
 }
 @media (forced-colors) {
   .btn {
-    outline: 2px solid transparent;
+    color: linkText;
+    outline: 2px solid linkText;
   }
   .btn:hover {
     outline-width: 5px;
@@ -275,10 +269,6 @@ button {
 }
 
 header:not(.details) {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   position: -webkit-sticky;
   position: sticky;
   z-index: 999;
@@ -291,13 +281,20 @@ header:not(.details) > .wrapper {
   display: flex;
   justify-content: space-between;
 }
+@media (forced-colors) {
+  header:not(.details) > .wrapper {
+    border-bottom: 1px solid #fff;
+  }
+}
 @media (max-width: 860px) {
   header:not(.details) > .wrapper {
     align-items: center;
   }
 }
 header:not(.details) input[type=checkbox] {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
 }
 header:not(.details) label {
   cursor: pointer;
@@ -325,7 +322,7 @@ header:not(.details) label div {
 }
 @media (forced-colors) {
   header:not(.details) label div {
-    background: canvasText;
+    background: highlight;
   }
 }
 header:not(.details) #menuBtn:checked ~ label {
@@ -475,16 +472,17 @@ header:not(.details) .search {
 }
 @media (forced-colors) {
   header:not(.details) .search svg {
-    fill: canvasText;
+    fill: highlight;
   }
 }
 
 footer {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   background: #171717;
+}
+@media (forced-colors) {
+  footer {
+    border-top: 1px solid #fff;
+  }
 }
 footer .links {
   display: grid;
@@ -644,7 +642,7 @@ header.alt .wrapper a::before, header.alt .wrapper a::after {
 }
 @media (forced-colors) {
   header.alt .wrapper a::before, header.alt .wrapper a::after {
-    background: canvasText;
+    background: highlight;
   }
 }
 header.alt .wrapper a::before {
@@ -664,10 +662,6 @@ header.details .wrapper {
   padding-block: 0.9375rem;
 }
 header.details .wrapper .poster {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   display: none;
   pointer-events: none;
   position: relative;
@@ -716,10 +710,6 @@ header.details .wrapper .details div span {
 }
 
 .warning {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   position: relative;
   background: #E51937;
   transition: 0.2s;
@@ -757,7 +747,7 @@ header.details .wrapper .details div span {
 }
 @media (forced-colors) {
   .warning .wrapper button::before, .warning .wrapper button::after {
-    background: canvasText;
+    background: highlight;
   }
 }
 .warning .wrapper button::before {
@@ -816,10 +806,6 @@ header.details .wrapper .details div span {
   height: 100%;
 }
 .films-list .card .poster {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   position: relative;
   width: 100%;
   aspect-ratio: 100/147;
@@ -1313,10 +1299,6 @@ header.details .wrapper .details div span {
 }
 
 .showtimes .dates {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   display: flex;
   position: -webkit-sticky;
   position: sticky;
@@ -1441,10 +1423,6 @@ header.details .wrapper .details div span {
           margin-block-end: 1.5rem;
 }
 .showtimes .video_times .times .cells {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   gap: 1rem;
@@ -1470,10 +1448,6 @@ main.seats .hall {
           padding-block-end: 20px;
 }
 main.seats .hall .screen {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   align-self: center;
   width: 1050px;
   aspect-ratio: 7/1;
@@ -1510,12 +1484,13 @@ main.seats .hall .seats input {
 main.seats .hall .seats input:focus ~ label {
   border-color: #00a8e1;
 }
+@media (forced-colors) {
+  main.seats .hall .seats input:focus ~ label {
+    border-color: highlight;
+  }
+}
 main.seats .hall .seats label {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   width: 50px;
   aspect-ratio: 1/1;
   display: grid;
@@ -1528,14 +1503,10 @@ main.seats .hall .seats input:checked ~ label {
 }
 @media (forced-colors) {
   main.seats .hall .seats input:checked ~ label {
-    background: highlight !important;
+    background: canvasText !important;
   }
 }
 main.seats .types {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   display: flex;
   flex-flow: column;
   gap: 0.6rem;
@@ -1566,7 +1537,7 @@ main.seats .types ul:nth-child(2) li:nth-child(2) div {
 }
 @media (forced-colors) {
   main.seats .types ul:nth-child(2) li:nth-child(2) div {
-    background: highlight;
+    background: canvasText;
   }
 }
 main.seats .types ul:nth-child(2) li:nth-child(3) div {
@@ -1582,10 +1553,6 @@ main.seats .continue .wrapper {
   align-items: center;
 }
 main.seats .continue .wrapper .selectedNum {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   opacity: 0;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -1670,12 +1637,6 @@ main.seats .continue .wrapper .btn div {
   display: flex;
   flex-flow: column;
 }
-.payment form span {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
 .payment form input {
   min-width: 100px;
   color: #fff;
@@ -1714,10 +1675,6 @@ main.seats .continue .wrapper .btn div {
   justify-content: center;
 }
 .complete h1 {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   text-align: center;
   line-height: 2;
 }

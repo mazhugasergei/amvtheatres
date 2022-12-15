@@ -1,6 +1,5 @@
 .warning{
   @media (forced-colors){ border-bottom: 1px solid #fff; }
-  user-select: none;
   position: relative;
   background: $primary;
   transition: .2s;
@@ -22,7 +21,7 @@
       justify-content: center;
       align-items: center;
       &::before, &::after{
-        @media (forced-colors){ background: canvasText; }
+        @media (forced-colors){ background: highlight; }
         content: '';
         position: absolute;
         width: 25px;
@@ -56,7 +55,6 @@
       height: 100%;
     }
     .poster{
-      user-select: none;
       position: relative;
       width: 100%;
       aspect-ratio: 100/147;

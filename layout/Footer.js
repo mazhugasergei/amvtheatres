@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Footer = () => {
   return (
     <footer>
@@ -44,7 +46,7 @@ const Footer = () => {
       </div>
       <div className="container">
         <div className="wrapper">
-          <div className="copyright"><span>© Copyright 2022 AMV&nbsp;Theatres</span><a className="logo" href="/"><div>amv</div><div>theatres</div></a></div>
+          <div className="copyright"><span>© Copyright 2022 AMV&nbsp;Theatres</span><Link href="/"><a className="logo" aria-label="AMV theatres logo"><div aria-hidden="true">amv</div><div aria-hidden="true">theatres</div></a></Link></div>
           <div className="attention">This website is made as a demo for a university project. This is not a real movie tickets selling&nbsp;website.</div>
         </div>
       </div>

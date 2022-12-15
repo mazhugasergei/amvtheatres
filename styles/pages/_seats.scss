@@ -9,7 +9,6 @@ main.seats{
         border-width: 0;
         border-top-width: 10px;
       }
-      user-select: none;
       align-self: center;
       width: 1050px;
       aspect-ratio: 7/1;
@@ -35,11 +34,11 @@ main.seats{
         pointer-events: none;
         &:focus ~ label{
           border-color: $btn_white_hover;
+          @media (forced-colors){ border-color: highlight; }
         }
       }
       label{
         cursor: pointer;
-        user-select: none;
         width: 50px;
         aspect-ratio: 1/1;
         display: grid;
@@ -48,14 +47,13 @@ main.seats{
         font-size: 12px;
       }
       input:checked ~ label{
-        @media (forced-colors){ background: highlight !important; }
+        @media (forced-colors){ background: canvasText !important; }
         background: $primary !important;
       }
     }
   }
 
   .types{
-    user-select: none;
     display: flex;
     flex-flow: column;
     gap: .6rem;
@@ -80,7 +78,7 @@ main.seats{
       &:nth-child(2){
         li{
           &:nth-child(2) div{
-            @media (forced-colors){ background: highlight; }
+            @media (forced-colors){ background: canvasText; }
             background: $primary;
           }
           &:nth-child(3) div{ opacity: 0.4; }
@@ -97,7 +95,6 @@ main.seats{
       justify-content: flex-end;
       align-items: center;
       .selectedNum{
-        user-select: none;
         opacity: 0;
         text-transform: uppercase;
         font-size: .875rem;

@@ -78,7 +78,7 @@ const Summary = ({ movie, poster_url }) => {
         </div>
         <div className="purchase">
           <div className="wrapper">
-            <Link href={"/payment/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + router.query.s}><a className="btn">Purchase</a></Link>
+            <Link href={"/payment/" + movie.id + "?th=" + router.query.th + "&d=" + router.query.d + "&t=" + router.query.t + "&s=" + router.query.s}><a className="btn" accessKey="P">Purchase</a></Link>
           </div>
         </div>
       </main>

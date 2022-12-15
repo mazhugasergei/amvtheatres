@@ -1,5 +1,5 @@
 footer{
-  user-select: none;
+  @media (forced-colors){ border-top: 1px solid #fff; }
   background: #171717;
   .links{
     display: grid;
