@@ -1481,11 +1481,11 @@ main.seats .hall .seats input {
   opacity: 0;
   pointer-events: none;
 }
-main.seats .hall .seats input:focus ~ label {
+main.seats .hall .seats input:focus-visible ~ label {
   border-color: #00a8e1;
 }
 @media (forced-colors) {
-  main.seats .hall .seats input:focus ~ label {
+  main.seats .hall .seats input:focus-visible ~ label {
     border-color: highlight;
   }
 }
