@@ -1281,6 +1281,24 @@ header.details .wrapper .details div span {
   }
 }
 
+.showtimes ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.showtimes ::-webkit-scrollbar-track {
+  background: #000;
+}
+.showtimes ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+@media (forced-colors) {
+  .showtimes ::-webkit-scrollbar-thumb {
+    background: canvasText;
+  }
+}
+.showtimes ::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
 .showtimes .dates {
   display: flex;
   position: -webkit-sticky;
@@ -1424,6 +1442,24 @@ header.details .wrapper .details div span {
   color: #00a8e1;
 }
 
+main.seats ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+main.seats ::-webkit-scrollbar-track {
+  background: #000;
+}
+main.seats ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+@media (forced-colors) {
+  main.seats ::-webkit-scrollbar-thumb {
+    background: canvasText;
+  }
+}
+main.seats ::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
 main.seats .hall {
   overflow-x: auto;
   max-width: 1098px;
@@ -1558,6 +1594,24 @@ main.seats .continue .wrapper .btn div {
   border-left-color: #000;
 }
 
+.summary ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.summary ::-webkit-scrollbar-track {
+  background: #000;
+}
+.summary ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+@media (forced-colors) {
+  .summary ::-webkit-scrollbar-thumb {
+    background: canvasText;
+  }
+}
+.summary ::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
 .summary .checkout {
   overflow-y: auto;
   max-width: 27.5rem;

@@ -1,5 +1,7 @@
 .showtimes{
 
+  @include scrollbar;
+
   .dates{
     display: flex;
     position: sticky;

@@ -1,4 +1,7 @@
 main.seats{
+
+  @include scrollbar;
+
   .hall{
     overflow-x: auto;
     max-width: 1098px;

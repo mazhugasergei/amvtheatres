@@ -1,4 +1,7 @@
 .summary{
+
+  @include scrollbar;
+
   .checkout{
     overflow-y: auto;
     max-width: 27.5rem;
