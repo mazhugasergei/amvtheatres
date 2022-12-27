@@ -25,28 +25,6 @@ ul {
   list-style: none;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333;
-}
-@media (forced-colors) {
-  ::-webkit-scrollbar-thumb {
-    background: canvasText;
-  }
-}
-
-::-webkit-scrollbar-corner {
-  background: rgba(0, 0, 0, 0);
-}
-
 @font-face {
   font-family: "Gordita";
   src: url("/fonts/Gordita Web/gordita_black-webfont.woff2") format("woff2"), url("/fonts/Gordita Web/gordita_black-webfont.woff") format("woff");
