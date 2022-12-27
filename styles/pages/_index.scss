@@ -64,6 +64,7 @@
       @media (min-width: $bp5){ max-width: 200px; }
       @media (min-width: $bp8){ max-width: 280px; }
       flex-shrink: 0;
+      background-color: #222;
     }
     .content{
       .title{

@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <div className="wrapper">
-        <input type="checkbox" id="menuBtn" aria-label="menu button"
+        <input type="checkbox" id="menuBtn" tabIndex={-1} aria-label="menu button"
           onClick={()=>{
             if(document.querySelector('#menuBtn').checked) document.body.style.overflow = "hidden"
             else document.body.style.overflow = "unset"

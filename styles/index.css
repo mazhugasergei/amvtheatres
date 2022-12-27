@@ -811,6 +811,7 @@ header.details .wrapper .details div span {
   aspect-ratio: 100/147;
   max-width: 100px;
   flex-shrink: 0;
+  background-color: #222;
 }
 @media (min-width: 375px) {
   .films-list .card .poster {
@@ -1132,17 +1133,21 @@ header.details .wrapper .details div span {
   display: none;
 }
 .details .carousel .slides .slide {
+  position: relative;
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
-  aspect-ratio: 16/9;
   background-color: #222;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .details .carousel .slides .slide:not(:nth-child(1)) {
   cursor: pointer;
+}
+.details .carousel .slides .slide img {
+  display: block;
+  width: 100%;
 }
 .details .carousel nav {
   display: flex;

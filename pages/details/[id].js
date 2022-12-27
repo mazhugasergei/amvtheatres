@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 // next
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 // firebase
 import { getMovies, getImage, getImages } from "../../utils/firebase"
 // components
@@ -86,9 +87,13 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
         </div>
 
         <div className="carousel">
-          <div className="slides" onScroll={scrollSlides}>
-            { screenshots_urls.map((url, i) => ( <div className="slide" onClick={moveSlides} data-index={i} style={{backgroundImage: "url('"+url+"')"}} key={i}></div> )) }
-          </div>
+          <div className="slides" onScroll={scrollSlides}>{
+            screenshots_urls.map((url, i) => (
+              <div className="slide" onClick={moveSlides} data-index={i} key={i}>
+                <img src={url}/>
+              </div>
+            ))
+          }</div>
           <nav>
             { screenshots_urls.map((ulr, i) => (
               <div key={i}>

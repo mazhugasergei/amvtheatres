@@ -96,15 +96,19 @@
       padding-inline: 10vw;
       &::-webkit-scrollbar{ display: none; }
       .slide{
+        position: relative;
         scroll-snap-align: start;
         flex-shrink: 0;
         width: 100%;
-        aspect-ratio: 16/9;
         background-color: #222;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         &:not(:nth-child(1)){ cursor: pointer; }
+        img{
+          display: block;
+          width: 100%;
+        }
       }
     }
     nav{
@@ -116,10 +120,6 @@
         opacity: 0;
         pointer-events: none;
         position: absolute;
-        // &:focus ~ label{
-        //   outline: .125rem solid #fff;
-        //   outline-offset: .125rem;
-        // }
       }
       label{
         cursor: pointer;
