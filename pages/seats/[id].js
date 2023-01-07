@@ -97,7 +97,7 @@ const Seats = ({ movie, poster_url }) => {
                   <input type="checkbox" id={letter+num}
                     data-seat={letter + num}
                     autoComplete="off"
-                    tabIndex={movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? -1 : 0}
+                    tabIndex={"occupied_seats" in movie && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? -1 : 0}
                     onChange={seatClick}
                   />
                   <label htmlFor={letter+num}
@@ -106,8 +106,8 @@ const Seats = ({ movie, poster_url }) => {
                       marginInlineEnd: num == 4? "20px" : "unset",
                       marginInlineStart: num == 13? "20px" : "unset",
                       borderRadius: letter == "F" && (num == 4 || num == 5 || num == 8 || num == 9 || num == 12 || num == 13)? "50%" : "20%",
-                      opacity: movie.hasOwnProperty('occupied_seats') && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? ".4" : "unset",
-                      pointerEvents: movie.hasOwnProperty('occupied_seats') && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? "none" : "unset"
+                      opacity: "occupied_seats" in movie && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? ".4" : "unset",
+                      pointerEvents: "occupied_seats" in movie && movie.occupied_seats.includes(router.query.th+"_"+router.query.d+"_"+router.query.t+"_"+letter+num)? "none" : "unset"
                     }}
                   >{ letter + num }</label>
                 </div>
