@@ -56,7 +56,7 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
     const padding = parseInt(window.getComputedStyle(document.querySelector('.details .carousel .slides'), null).getPropertyValue('padding-left'))
     const slidesGap = document.querySelectorAll('.details .carousel .slide')[1].offsetLeft - slideWidth - padding
     // set scroll position
-    document.querySelector('.details .carousel .slides').scrollLeft = document.querySelectorAll('.details .carousel .slide')[i].offsetLeft - slidesGap;
+    document.querySelector('.details .carousel .slides').scrollLeft = document.querySelectorAll('main.details .carousel .slide')[i].offsetLeft - slidesGap;
   }
 
 
@@ -89,8 +89,8 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
         <div className="carousel">
           <div className="slides" onScroll={scrollSlides}>{
             screenshots_urls.map((url, i) => (
-              <div className="slide" onClick={moveSlides} data-index={i} key={i}>
-                <img src={url}/>
+              <div className="slide" key={i}>
+                <img src={url} onClick={moveSlides} data-index={i}/>
               </div>
             ))
           }</div>
