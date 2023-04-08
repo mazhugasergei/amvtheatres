@@ -95,7 +95,7 @@ const Details = ({ movie, hero_url, screenshots_urls }) => {
             ))
           }</div>
           <nav>
-            { screenshots_urls.map((ulr, i) => (
+            { screenshots_urls.map((url, i) => (
               <div key={i}>
                 <input type="radio" name="carousel-input" id={"input_" + i} defaultChecked={i == 0} onFocus={moveSlides} data-index={i} autoComplete="off"/>
                 <label htmlFor={"input_" + i} onClick={moveSlides} data-index={i}/>
